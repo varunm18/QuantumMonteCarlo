@@ -39,7 +39,7 @@ namespace MITRE.QSD.L12 {
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
-        let volatility = 0.5;
+        let volatility = 0.0;
 
         // Prepare input probability distribution
         PrepD(riskFactors, volatility);
@@ -54,18 +54,17 @@ namespace MITRE.QSD.L12 {
         AmplifyOutput(riskFactors, riskMeasures, output, volatility);
 
         // QFT†
-        SwapReverseRegister(output);
-        Adjoint QFT(BigEndian(output));
+        QFTDagger(output);
 
 
         // Measure output estimation
-        return MultiM(BigEndian(output)!);
+        return MultiM(output);
 
     // Change/add whatever you want!
     }
 
     operation PrepD(riskFactors: Qubit[], drift: Double) : Unit is Adj + Ctl{
-        for i in 0..Length(riskFactors)-1{
+        for i in 0..Length(riskFactors)-1 {
             Ry(E()^(drift*IntAsDouble(i)), riskFactors[i]);
         }
     }
@@ -92,7 +91,7 @@ namespace MITRE.QSD.L12 {
 
         // D†, the negative degrees of rotations
         // TODO: Modify this to the actual rotation value
-        Controlled  Adjoint PrepD([temp], (riskFactors, volatility));
+        Controlled Adjoint PrepD([temp], (riskFactors, volatility));
 
         // Palindrome
         ApplyToEachC(X, riskFactors);
@@ -107,7 +106,7 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
         ApplyToEachC(X, riskFactors);
 
-        Controlled  PrepD([temp], (riskFactors, volatility));
+        Controlled PrepD([temp], (riskFactors, volatility));
 
         // M sandwich ends
         Controlled X(riskFactors, riskMeasure[0]);
@@ -122,6 +121,17 @@ namespace MITRE.QSD.L12 {
                 Controlled QInterference([output[i]], (riskFactors, riskMeasure, volatility));
             }
         }
+    }
+
+    operation QFTDagger(register: Qubit[]) : Unit{
+        SwapReverseRegister(register);
+        
+        H(register[0]);
+        Controlled Rz([register[0]], (-PI()/2.0, register[1]));
+        H(register[1]);
+        Controlled Rz([register[0]], (-PI()/4.0, register[2]));
+        Controlled Rz([register[1]], (-PI()/2.0, register[2]));
+        H(register[2]);
     }
 
 }
