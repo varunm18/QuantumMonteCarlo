@@ -30,6 +30,7 @@ namespace MITRE.QSD.L12 {
     open Microsoft.Quantum.Measurement;
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Arithmetic;
+    open Microsoft.Quantum.Math;
 
     // @EntryPoint() denotes the start of program execution.
     @EntryPoint()
@@ -38,15 +39,19 @@ namespace MITRE.QSD.L12 {
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
+        let drift = 0.0;
 
         // Prepare input probability distribution
-        PrepD(riskFactors);
+        PrepD(riskFactors, drift);
+
+        // QFT
+        ApplyToEach(H, output);
 
         // Store intermediate values w/ Risk Measurement qubits
         RiskMeasure(riskFactors, riskMeasures);
         
         // Made-up Q gates for Amplitude Amplification
-        AmplifyOutput(riskFactors, riskMeasures, output);
+        AmplifyOutput(riskFactors, riskMeasures, output, drift);
 
         // QFT†
         SwapReverseRegister(output);
@@ -59,9 +64,10 @@ namespace MITRE.QSD.L12 {
     // Change/add whatever you want!
     }
 
-    operation PrepD(riskFactors: Qubit[]) : Unit {
-        // TODO: Change this to rotation gates that encode real data
-        ApplyToEach(H, riskFactors);
+    operation PrepD(riskFactors: Qubit[], drift: Double) : Unit is Adj + Ctl{
+        for i in 0..Length(riskFactors)-1{
+            Ry(E()^(drift*IntAsDouble(i)), riskFactors[i]);
+        }
     }
 
     operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[]) : Unit {
@@ -71,7 +77,11 @@ namespace MITRE.QSD.L12 {
     }
 
     // Exact same as the example Q gate demonstrated in the paper
-    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[]) : Unit is Ctl {
+    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], drift: Double) : Unit is Ctl {
+
+        use temp = Qubit();
+        X(temp);
+
         // XZX, flip phase's sign only if RM = |0> - preparing for cancellation
         X(riskMeasure[0]);
         Z(riskMeasure[0]);
@@ -80,10 +90,9 @@ namespace MITRE.QSD.L12 {
         // M†, forms a sandwich w/ the last M
         Controlled X(riskFactors, riskMeasure[0]);
 
-        // D†, the negative degrees of rotation~
+        // D†, the negative degrees of rotations
         // TODO: Modify this to the actual rotation value
-        ApplyToEachC(Z, riskFactors);
-        ApplyToEachC(H, riskFactors);
+        Controlled  Adjoint PrepD([temp], (riskFactors, drift));
 
         // Palindrome
         ApplyToEachC(X, riskFactors);
@@ -98,20 +107,19 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
         ApplyToEachC(X, riskFactors);
 
-        // D
-        ApplyToEachC(H, riskFactors);
+        Controlled  PrepD([temp], (riskFactors, drift));
 
         // M sandwich ends
         Controlled X(riskFactors, riskMeasure[0]);
 
     }
 
-    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[]) : Unit {
+    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], drift: Double) : Unit {
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
             for _ in 0 .. qCount - 1 {
-                Controlled QInterference([output[i]], (riskFactors, riskMeasure));
+                Controlled QInterference([output[i]], (riskFactors, riskMeasure, drift));
             }
         }
     }
