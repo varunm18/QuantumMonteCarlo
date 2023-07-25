@@ -39,10 +39,10 @@ namespace MITRE.QSD.L12 {
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
-        let drift = 0.0;
+        let volatility = 0.5;
 
         // Prepare input probability distribution
-        PrepD(riskFactors, drift);
+        PrepD(riskFactors, volatility);
 
         // QFT
         ApplyToEach(H, output);
@@ -51,7 +51,7 @@ namespace MITRE.QSD.L12 {
         RiskMeasure(riskFactors, riskMeasures);
         
         // Made-up Q gates for Amplitude Amplification
-        AmplifyOutput(riskFactors, riskMeasures, output, drift);
+        AmplifyOutput(riskFactors, riskMeasures, output, volatility);
 
         // QFT†
         SwapReverseRegister(output);
@@ -77,7 +77,7 @@ namespace MITRE.QSD.L12 {
     }
 
     // Exact same as the example Q gate demonstrated in the paper
-    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], drift: Double) : Unit is Ctl {
+    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], volatility: Double) : Unit is Ctl {
 
         use temp = Qubit();
         X(temp);
@@ -92,7 +92,7 @@ namespace MITRE.QSD.L12 {
 
         // D†, the negative degrees of rotations
         // TODO: Modify this to the actual rotation value
-        Controlled  Adjoint PrepD([temp], (riskFactors, drift));
+        Controlled  Adjoint PrepD([temp], (riskFactors, volatility));
 
         // Palindrome
         ApplyToEachC(X, riskFactors);
@@ -107,19 +107,19 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
         ApplyToEachC(X, riskFactors);
 
-        Controlled  PrepD([temp], (riskFactors, drift));
+        Controlled  PrepD([temp], (riskFactors, volatility));
 
         // M sandwich ends
         Controlled X(riskFactors, riskMeasure[0]);
 
     }
 
-    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], drift: Double) : Unit {
+    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], volatility: Double) : Unit {
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
             for _ in 0 .. qCount - 1 {
-                Controlled QInterference([output[i]], (riskFactors, riskMeasure, drift));
+                Controlled QInterference([output[i]], (riskFactors, riskMeasure, volatility));
             }
         }
     }
