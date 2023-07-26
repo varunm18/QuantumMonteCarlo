@@ -48,7 +48,18 @@ namespace MITRE.QSD.L12 {
         let timeStamp = totalTime / steps;
 
         let volatilityOverTime = E() ^ (volatility * Sqrt(timeStamp));
-        let priceShift = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0) / (volatilityOverTime^2.0 - 1.0);
+        mutable priceShiftN = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0);
+        mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
+        if priceShiftD == 0.0 { // NOTE: account for floating point error?
+            if priceShiftN == 0.0 {
+                // TODO: verify
+                set priceShiftN = E()^(drift * timeStamp);
+                set priceShiftD = 2.0 * volatilityOverTime;
+            } else {
+                fail "Price shift is undefined";
+            }
+        }
+        let priceShift = priceShiftN / priceShiftD;
         let degreesRotation = ArcSin(Sqrt(priceShift)) * 2.0;
 
         // Prepare input probability distribution
