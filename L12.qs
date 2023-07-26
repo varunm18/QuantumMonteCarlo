@@ -39,10 +39,20 @@ namespace MITRE.QSD.L12 {
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
+
+        // Variables
         let volatility = 0.0;
+        let drift = 0.0;
+        let totalTime = 1.0;
+        let steps = 2.0;
+        let timeStamp = totalTime / steps;
+
+        let volatilityOverTime = E() ^ (volatility * Sqrt(timeStamp));
+        let priceShift = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0) / (volatilityOverTime^2.0 - 1.0);
+        let degreesRotation = ArcSin(Sqrt(priceShift)) * 2.0;
 
         // Prepare input probability distribution
-        PrepD(riskFactors, volatility);
+        PrepD(riskFactors, degreesRotation);
 
         // QFT
         ApplyToEach(H, output);
@@ -51,7 +61,7 @@ namespace MITRE.QSD.L12 {
         RiskMeasure(riskFactors, riskMeasures);
         
         // Made-up Q gates for Amplitude Amplification
-        AmplifyOutput(riskFactors, riskMeasures, output, volatility);
+        AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation);
 
         // QFT†
         QFTDagger(output);
@@ -63,9 +73,9 @@ namespace MITRE.QSD.L12 {
     // Change/add whatever you want!
     }
 
-    operation PrepD(riskFactors: Qubit[], drift: Double) : Unit is Adj + Ctl{
+    operation PrepD(riskFactors: Qubit[], rotation: Double) : Unit is Adj + Ctl {
         for i in 0..Length(riskFactors)-1 {
-            Ry(E()^(drift*IntAsDouble(i)), riskFactors[i]);
+            Ry(rotation, riskFactors[i]);
         }
     }
 
@@ -76,8 +86,8 @@ namespace MITRE.QSD.L12 {
     }
 
     // Exact same as the example Q gate demonstrated in the paper
-    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], volatility: Double) : Unit is Ctl {
-
+    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], rotation: Double) : Unit is Ctl {
+        // Magical temp variable
         use temp = Qubit();
         X(temp);
 
@@ -90,8 +100,7 @@ namespace MITRE.QSD.L12 {
         Controlled X(riskFactors, riskMeasure[0]);
 
         // D†, the negative degrees of rotations
-        // TODO: Modify this to the actual rotation value
-        Controlled Adjoint PrepD([temp], (riskFactors, volatility));
+        Controlled Adjoint PrepD([temp], (riskFactors, rotation));
 
         // Palindrome
         ApplyToEachC(X, riskFactors);
@@ -99,39 +108,44 @@ namespace MITRE.QSD.L12 {
 
         Controlled X(riskFactors, riskMeasure[1]);
         Controlled X(riskMeasure[0..1], riskMeasure[2]);
-        CNOT(riskMeasure[2], riskMeasure[0]);
+        Controlled Z([riskMeasure[2]], riskMeasure[0]);
         Controlled X(riskMeasure[0..1], riskMeasure[2]);
         Controlled X(riskFactors, riskMeasure[1]);
 
         X(riskMeasure[0]);
         ApplyToEachC(X, riskFactors);
 
-        Controlled PrepD([temp], (riskFactors, volatility));
+        Controlled PrepD([temp], (riskFactors, rotation));
 
         // M sandwich ends
         Controlled X(riskFactors, riskMeasure[0]);
 
     }
 
-    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], volatility: Double) : Unit {
+    // Output Amplifications - the bunch of Q gates
+    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], rotation: Double) : Unit {
+        // Use every output qubit as the control bit
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
+            // Apply Q gate for 2 ^ qubit-index times
             for _ in 0 .. qCount - 1 {
-                Controlled QInterference([output[i]], (riskFactors, riskMeasure, volatility));
+                Controlled QInterference([output[i]], (riskFactors, riskMeasure, rotation));
             }
         }
     }
 
-    operation QFTDagger(register: Qubit[]) : Unit{
-        SwapReverseRegister(register);
-        
-        H(register[0]);
-        Controlled Rz([register[0]], (-PI()/2.0, register[1]));
-        H(register[1]);
-        Controlled Rz([register[0]], (-PI()/4.0, register[2]));
-        Controlled Rz([register[1]], (-PI()/2.0, register[2]));
-        H(register[2]);
+    operation QFTDagger(output: Qubit[]) : Unit{
+        SwapReverseRegister(output);
+
+        H(output[0]);
+
+        Controlled Rz([output[0]], (-PI()/2.0, output[1]));
+        H(output[1]);
+
+        Controlled Rz([output[0]], (-PI()/4.0, output[2]));
+        Controlled Rz([output[1]], (-PI()/2.0, output[2]));
+        H(output[2]);
     }
 
 }
