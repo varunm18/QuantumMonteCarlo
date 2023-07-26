@@ -52,7 +52,7 @@ namespace MITRE.QSD.L12 {
         mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
         if priceShiftD == 0.0 { // NOTE: account for floating point error?
             if priceShiftN == 0.0 {
-                // TODO: verify
+                // Verified
                 set priceShiftN = E()^(drift * timeStamp);
                 set priceShiftD = 2.0 * volatilityOverTime;
             } else {
@@ -148,15 +148,20 @@ namespace MITRE.QSD.L12 {
 
     operation QFTDagger(output: Qubit[]) : Unit{
         SwapReverseRegister(output);
+        
+        for i in 0 .. Length(output)-1 {
+            if i != 0 {
+                for x in i .. 1 {
+                    let degreesRotation = -PI() / 2.0^IntAsDouble(x);
+                    let controlQubitIndex = i - x;
 
-        H(output[0]);
+                    Controlled Rz([output[controlQubitIndex]], (degreesRotation, output[i]));
+                }
+            }
 
-        Controlled Rz([output[0]], (-PI()/2.0, output[1]));
-        H(output[1]);
+            H(output[i]);
+        }
 
-        Controlled Rz([output[0]], (-PI()/4.0, output[2]));
-        Controlled Rz([output[1]], (-PI()/2.0, output[2]));
-        H(output[2]);
     }
 
 }
