@@ -82,13 +82,15 @@ namespace MITRE.QSD.L12 {
     // Change/add whatever you want!
     }
 
+    // Rotating probability distribution of input qubits
     operation PrepD(riskFactors: Qubit[], rotation: Double) : Unit is Ctl {
-        for i in 0..Length(riskFactors)-1 {
+        for i in 0..Length(riskFactors) - 1 {
             Ry(rotation, riskFactors[i]);
         }
     }
 
-    operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[]) : Unit {
+    // Update the Risk Measurement qubit
+    operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[]) : Unit is Ctl {
         // Double CNOT gate
 
         Controlled X(input, riskMeasure[0]);
@@ -103,7 +105,7 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
 
         // M†, forms a sandwich w/ the last M
-        Controlled X(riskFactors, riskMeasure[0]);
+        RiskMeasure(riskFactors, riskMeasure);
 
         // D†, the negative degrees of rotations
         PrepD(riskFactors, -rotation);
@@ -111,10 +113,10 @@ namespace MITRE.QSD.L12 {
         // Palindrome
         ApplyToEachC(X, riskFactors);
         X(riskMeasure[0]);
-
+        
         Controlled X(riskFactors, riskMeasure[1]);
         Controlled X(riskMeasure[0..1], riskMeasure[2]);
-        Controlled Z([riskMeasure[2]], riskMeasure[0]);
+        Controlled Z([riskMeasure[2]], riskMeasure[0]); // Center of the Palindrome
         Controlled X(riskMeasure[0..1], riskMeasure[2]);
         Controlled X(riskFactors, riskMeasure[1]);
 
@@ -124,7 +126,7 @@ namespace MITRE.QSD.L12 {
         PrepD(riskFactors, rotation);
 
         // M sandwich ends
-        Controlled X(riskFactors, riskMeasure[0]);
+        RiskMeasure(riskFactors, riskMeasure);
 
     }
 
