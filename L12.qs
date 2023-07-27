@@ -78,13 +78,11 @@ namespace MITRE.QSD.L12 {
         QFTDagger(output);
 
 
-        // Measure output estimation
         return MultiM(output);
-
     // Change/add whatever you want!
     }
 
-    operation PrepD(riskFactors: Qubit[], rotation: Double) : Unit is Adj + Ctl {
+    operation PrepD(riskFactors: Qubit[], rotation: Double) : Unit is Ctl {
         for i in 0..Length(riskFactors)-1 {
             Ry(rotation, riskFactors[i]);
         }
@@ -98,9 +96,6 @@ namespace MITRE.QSD.L12 {
 
     // Exact same as the example Q gate demonstrated in the paper
     operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], rotation: Double) : Unit is Ctl {
-        // Magical temp variable
-        use temp = Qubit();
-        X(temp);
 
         // XZX, flip phase's sign only if RM = |0> - preparing for cancellation
         X(riskMeasure[0]);
@@ -111,7 +106,7 @@ namespace MITRE.QSD.L12 {
         Controlled X(riskFactors, riskMeasure[0]);
 
         // D†, the negative degrees of rotations
-        Controlled Adjoint PrepD([temp], (riskFactors, rotation));
+        PrepD(riskFactors, -rotation);
 
         // Palindrome
         ApplyToEachC(X, riskFactors);
@@ -126,7 +121,7 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
         ApplyToEachC(X, riskFactors);
 
-        Controlled PrepD([temp], (riskFactors, rotation));
+        PrepD(riskFactors, rotation);
 
         // M sandwich ends
         Controlled X(riskFactors, riskMeasure[0]);
@@ -148,7 +143,7 @@ namespace MITRE.QSD.L12 {
 
     operation QFTDagger(output: Qubit[]) : Unit{
         SwapReverseRegister(output);
-        
+
         for i in 0 .. Length(output)-1 {
             if i != 0 {
                 for x in i .. 1 {
