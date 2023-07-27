@@ -32,62 +32,13 @@ namespace MITRE.QSD.L12 {
     open Microsoft.Quantum.Arithmetic;
     open Microsoft.Quantum.Math;
 
-    // @EntryPoint() denotes the start of program execution.
-    @EntryPoint()
-    operation MainOp() : Result[] {
-        // Initializations
-        use riskFactors = Qubit[2];
-        use riskMeasures = Qubit[3];
-        use output = Qubit[3];
-
-        // Variables
-        let volatility = 0.0;
-        let drift = 0.0;
-        let totalTime = 1.0;
-        let steps = 2.0;
-        let timeStamp = totalTime / steps;
-
-        let volatilityOverTime = E() ^ (volatility * Sqrt(timeStamp));
-        mutable priceShiftN = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0);
-        mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
-        if priceShiftD == 0.0 { // NOTE: account for floating point error?
-            if priceShiftN == 0.0 {
-                // Verified
-                set priceShiftN = E()^(drift * timeStamp);
-                set priceShiftD = 2.0 * volatilityOverTime;
-            } else {
-                fail "Price shift is undefined";
-            }
-        }
-        let priceShift = priceShiftN / priceShiftD;
-        let degreesRotation = ArcSin(Sqrt(priceShift)) * 2.0;
-
-        // Prepare input probability distribution
-        PrepD(riskFactors, degreesRotation);
-
-        // QFT
-        ApplyToEach(H, output);
-
-        // Store intermediate values w/ Risk Measurement qubits
-        RiskMeasure(riskFactors, riskMeasures);
-        
-        // Made-up Q gates for Amplitude Amplification
-        AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation);
-
-        // QFT†
-        QFTDagger(output);
-
-
-        return MultiM(output);
-    // Change/add whatever you want!
-    }
-
     // Rotating probability distribution of input qubits
     operation PrepD(riskFactors: Qubit[], rotation: Double) : Unit is Ctl {
         for i in 0..Length(riskFactors) - 1 {
             Ry(rotation, riskFactors[i]);
         }
     }
+
 
     // Update the Risk Measurement qubit
     operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[]) : Unit is Ctl {
@@ -143,22 +94,76 @@ namespace MITRE.QSD.L12 {
         }
     }
 
-    operation QFTDagger(output: Qubit[]) : Unit{
+    // // Dagger
+    // operation QFTDagger(output: BigEndian) : Unit{
+    //     // SwapReverseRegister(output!);
+
+    //     for i in 0 .. Length(output!)-1 {
+    //         if i != 0 {
+    //             for x in i .. 1 {
+    //                 let degreesRotation = -PI() / 2.0^IntAsDouble(x);
+    //                 let controlQubitIndex = i - x;
+
+    //                 Controlled Rz([output![controlQubitIndex]], (degreesRotation, output![i]));
+    //             }
+    //         }
+
+    //         H(output![i]);
+    //     }
+
+    // }
+
+
+    // @EntryPoint() denotes the start of program execution.
+    @EntryPoint()
+    operation MainOp() : Result[] {
+        // Initializations
+        use riskFactors = Qubit[2];
+        use riskMeasures = Qubit[3];
+        use output = Qubit[3];
+
+        // Variables
+        let volatility = 0.0;
+        let drift = 0.0;
+        let totalTime = 1.0;
+        let steps = 2.0;
+        let timeStamp = totalTime / steps;
+
+        let volatilityOverTime = E() ^ (volatility * Sqrt(timeStamp));
+        mutable priceShiftN = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0);
+        mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
+        if priceShiftD == 0.0 { // NOTE: account for floating point error?
+            if priceShiftN == 0.0 {
+                // Verified
+                set priceShiftN = E()^(drift * timeStamp);
+                set priceShiftD = 2.0 * volatilityOverTime;
+            } else {
+                fail "Price shift is undefined";
+            }
+        }
+        let priceShift = priceShiftN / priceShiftD;
+        let degreesRotation = ArcSin(Sqrt(0.5)) * 2.0;
+
+        // Prepare input probability distribution
+        PrepD(riskFactors, degreesRotation);
+
+        // QFT
+        QFT(BigEndian(output));
         SwapReverseRegister(output);
 
-        for i in 0 .. Length(output)-1 {
-            if i != 0 {
-                for x in i .. 1 {
-                    let degreesRotation = -PI() / 2.0^IntAsDouble(x);
-                    let controlQubitIndex = i - x;
+        // Store intermediate values w/ Risk Measurement qubits
+        RiskMeasure(riskFactors, riskMeasures);
+        
+        // Made-up Q gates for Amplitude Amplification
+        AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation);
 
-                    Controlled Rz([output[controlQubitIndex]], (degreesRotation, output[i]));
-                }
-            }
+        // QFT†
+        SwapReverseRegister(output);
+        Adjoint QFT(BigEndian(output));
 
-            H(output[i]);
-        }
-
+        return MultiM(output);
+    // Change/add whatever you want!
     }
 
+    
 }
