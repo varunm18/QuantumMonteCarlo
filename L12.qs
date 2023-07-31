@@ -131,8 +131,8 @@ namespace MITRE.QSD.L12 {
         let measureMax = true;
 
         // Variables
-        let volatility = 0.0;
-        let drift = 0.0;
+        let volatility = 0.357;
+        let drift = 0.281;
         let totalTime = 1.0;
         let steps = 2.0;
         let timeStamp = totalTime / steps;
