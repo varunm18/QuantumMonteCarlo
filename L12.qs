@@ -123,7 +123,7 @@ namespace MITRE.QSD.L12 {
 
     // @EntryPoint() denotes the start of program execution.
     @EntryPoint()
-    operation MainOp() : Result[] {
+    operation MainOp(volatility: Double, drift: Double) : Result[] {
         // Initializations
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
@@ -131,8 +131,6 @@ namespace MITRE.QSD.L12 {
         let measureMax = true;
 
         // Variables
-        let volatility = 0.0;
-        let drift = 0.0;
         let totalTime = 1.0;
         let steps = 2.0;
         let timeStamp = totalTime / steps;
