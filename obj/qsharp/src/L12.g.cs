@@ -138,7 +138,7 @@ namespace MITRE.QSD.L12
 
         String ICallable.Name => "RiskMeasure";
         String ICallable.FullName => "MITRE.QSD.L12.RiskMeasure";
-        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC
+        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC
         {
             get;
             set;
@@ -157,11 +157,11 @@ namespace MITRE.QSD.L12
             if (!(measureMax))
             {
 #line 48 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
+                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
 #line 49 "/home/ubuntu/ryan/LABS/L12/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Apply((input, riskMeasure[0L]));
 #line 50 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
+                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
             }
             else
             {
@@ -181,11 +181,11 @@ namespace MITRE.QSD.L12
             if (!(measureMax))
             {
 #line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
+                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
 #line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (input, riskMeasure[0L])));
 #line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
+                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
             }
             else
             {
@@ -200,7 +200,7 @@ namespace MITRE.QSD.L12
         ;
         public override void __Init__()
         {
-            this.Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC));
+            this.Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC));
             this.Microsoft__Quantum__Intrinsic__X = this.__Factory__.Get<IUnitary<Qubit>>(typeof(global::Microsoft.Quantum.Intrinsic.X));
         }
 
@@ -261,7 +261,7 @@ namespace MITRE.QSD.L12
             set;
         }
 
-        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC
+        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC
         {
             get;
             set;
@@ -281,7 +281,7 @@ namespace MITRE.QSD.L12
 #line 69 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             PrepD__.Apply((riskFactors, -(rotation)));
 #line 72 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
+            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
 #line 73 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
 #line 75 "/home/ubuntu/ryan/LABS/L12/L12.qs"
@@ -297,7 +297,7 @@ namespace MITRE.QSD.L12
 #line 81 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
 #line 82 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
+            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
 #line 84 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             PrepD__.Apply((riskFactors, rotation));
 #line 87 "/home/ubuntu/ryan/LABS/L12/L12.qs"
@@ -321,7 +321,7 @@ namespace MITRE.QSD.L12
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             PrepD__.Controlled.Apply((__controlQubits__, (riskFactors, -(rotation))));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
+            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
@@ -337,7 +337,7 @@ namespace MITRE.QSD.L12
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
+            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
             PrepD__.Controlled.Apply((__controlQubits__, (riskFactors, rotation)));
 #line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
@@ -353,7 +353,7 @@ namespace MITRE.QSD.L12
             this.Microsoft__Quantum__Intrinsic__Z = this.__Factory__.Get<IUnitary<Qubit>>(typeof(global::Microsoft.Quantum.Intrinsic.Z));
             this.RiskMeasure__ = this.__Factory__.Get<IControllable<(IQArray<Qubit>,IQArray<Qubit>,Boolean)>>(typeof(RiskMeasure));
             this.PrepD__ = this.__Factory__.Get<IControllable<(IQArray<Qubit>,Double)>>(typeof(PrepD));
-            this.Microsoft__Quantum__Canon___ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._ee76e2dd46764d71b6feb6d44a1ad8a5_ApplyToEachC));
+            this.Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC));
         }
 
         public override IApplyData __DataIn__((IQArray<Qubit>,IQArray<Qubit>,Double,Boolean) data) => new In(data);
@@ -546,11 +546,11 @@ namespace MITRE.QSD.L12
                                 try
                                 {
 #line 131 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var measureMax = false;
+                                    var measureMax = true;
 #line 134 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var volatility = 0.1D;
+                                    var volatility = 0D;
 #line 135 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var drift = 0.1D;
+                                    var drift = 0D;
 #line 136 "/home/ubuntu/ryan/LABS/L12/L12.qs"
                                     var totalTime = 1D;
 #line 137 "/home/ubuntu/ryan/LABS/L12/L12.qs"
