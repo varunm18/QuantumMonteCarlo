@@ -41,14 +41,21 @@ namespace MITRE.QSD.L12 {
 
 
     // Update the Risk Measurement qubit
-    operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[]) : Unit is Ctl {
+    operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[], measureMax: Bool) : Unit is Ctl {
         // Double CNOT gate
 
-        Controlled X(input, riskMeasure[0]);
+        if not measureMax {
+            ApplyToEachC(X, input);
+            Controlled X(input, riskMeasure[0]);
+            ApplyToEachC(X, input);
+        }
+        else {
+            Controlled X(input, riskMeasure[0]);
+        }
     }
 
     // Exact same as the example Q gate demonstrated in the paper
-    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], rotation: Double) : Unit is Ctl {
+    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], rotation: Double, measureMax: Bool) : Unit is Ctl {
 
         // XZX, flip phase's sign only if RM = |0> - preparing for cancellation
         X(riskMeasure[0]);
@@ -56,7 +63,7 @@ namespace MITRE.QSD.L12 {
         X(riskMeasure[0]);
 
         // M†, forms a sandwich w/ the last M
-        RiskMeasure(riskFactors, riskMeasure);
+        RiskMeasure(riskFactors, riskMeasure, measureMax);
 
         // D†, the negative degrees of rotations
         PrepD(riskFactors, -rotation);
@@ -77,19 +84,19 @@ namespace MITRE.QSD.L12 {
         PrepD(riskFactors, rotation);
 
         // M sandwich ends
-        RiskMeasure(riskFactors, riskMeasure);
+        RiskMeasure(riskFactors, riskMeasure, measureMax);
 
     }
 
     // Output Amplifications - the bunch of Q gates
-    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], rotation: Double) : Unit {
+    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], rotation: Double, measureMax: Bool) : Unit {
         // Use every output qubit as the control bit
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
             // Apply Q gate for 2 ^ qubit-index times
             for _ in 0 .. qCount - 1 {
-                Controlled QInterference([output[i]], (riskFactors, riskMeasure, rotation));
+                Controlled QInterference([output[i]], (riskFactors, riskMeasure, rotation, measureMax));
             }
         }
     }
@@ -121,6 +128,7 @@ namespace MITRE.QSD.L12 {
         use riskFactors = Qubit[2];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
+        let measureMax = true;
 
         // Variables
         let volatility = 0.0;
@@ -142,7 +150,7 @@ namespace MITRE.QSD.L12 {
             }
         }
         let priceShift = priceShiftN / priceShiftD;
-        let degreesRotation = ArcSin(Sqrt(0.5)) * 2.0;
+        let degreesRotation = ArcSin(Sqrt(priceShift)) * 2.0;
 
         // Prepare input probability distribution
         PrepD(riskFactors, degreesRotation);
@@ -152,10 +160,10 @@ namespace MITRE.QSD.L12 {
         SwapReverseRegister(output);
 
         // Store intermediate values w/ Risk Measurement qubits
-        RiskMeasure(riskFactors, riskMeasures);
+        RiskMeasure(riskFactors, riskMeasures, measureMax);
         
         // Made-up Q gates for Amplitude Amplification
-        AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation);
+        AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation, measureMax);
 
         // QFT†
         SwapReverseRegister(output);
@@ -165,5 +173,5 @@ namespace MITRE.QSD.L12 {
     // Change/add whatever you want!
     }
 
-    
+
 }
