@@ -49,10 +49,6 @@
               "version": "[0.28.263081, )",
               "autoReferenced": true
             },
-            "Microsoft.Quantum.Providers.IonQ": {
-              "target": "Package",
-              "version": "[0.28.263081, )"
-            },
             "Microsoft.Quantum.QSharp.Core": {
               "target": "Package",
               "version": "[0.28.263081, )"
