@@ -1,7 +1,17 @@
 import json
 import math
+import sys
 
 import numpy as np
+
+QUANTUM = False
+if len(sys.argv) > 1:
+    if sys.argv[1] == '-q':
+        import qsharp
+        from QMC import MainOp  # type: ignore
+        QUANTUM = True
+    else:
+        raise ValueError('Invalid command-line argument')
 
 
 with open('data.json', 'r') as f:
@@ -24,3 +34,11 @@ annual_drift = daily_drift * num_trading_days
 print(f"Volatility: {volatility}")
 print(f"Daily drift: {daily_drift}")
 print(f"Annual drift: {annual_drift}")
+
+if QUANTUM:
+    values = {}
+    for _ in range(100):
+        val = tuple(MainOp.simulate(volatility=volatility, drift=annual_drift))
+        values[val] = values.get(val, 0) + 1
+
+    print(values)

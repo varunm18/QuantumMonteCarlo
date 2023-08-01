@@ -2,8 +2,8 @@ import json
 import requests
 from os import getenv
 
-import qsharp
-from MITRE.QSD.L12 import MainOp
+# import qsharp
+# from MITRE.QSD.L12 import MainOp
 
 
 polygon_key = getenv('POLYGON_KEY')
@@ -26,4 +26,4 @@ with open('data.json', 'w') as f:
     json.dump(data, f, indent=4)
 
 # Call MainOp
-print(MainOp.simulate(volatility=0.1, drift=0.1))
+# print(MainOp.simulate(volatility=0.1, drift=0.1))

@@ -23,7 +23,7 @@
 // Alternatively, use the related documentation from the links above to submit
 // a job through the web UI.
 
-namespace MITRE.QSD.L12 {
+namespace QMC {
 
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
@@ -167,8 +167,11 @@ namespace MITRE.QSD.L12 {
         SwapReverseRegister(output);
         Adjoint QFT(BigEndian(output));
 
-        return MultiM(output);
-    // Change/add whatever you want!
+        let res = MultiM(output);
+
+        ResetAll(riskFactors+riskMeasures+output);
+
+        return res;
     }
 
 
