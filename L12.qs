@@ -123,25 +123,22 @@ namespace QMC {
 
     // @EntryPoint() denotes the start of program execution.
     @EntryPoint()
-    operation MainOp(volatility: Double, drift: Double) : Result[] {
+    operation MainOp(volatility: Double, drift: Double, totalTime: Int, steps: Int) : Result[] {
+        
         // Initializations
-        use riskFactors = Qubit[2];
+        use riskFactors = Qubit[steps];
         use riskMeasures = Qubit[3];
         use output = Qubit[3];
         let measureMax = true;
 
-        // Variables
-        let totalTime = 1.0;
-        let steps = 2.0;
-        let timeStamp = totalTime / steps;
-
-        let volatilityOverTime = E() ^ (volatility * Sqrt(timeStamp));
-        mutable priceShiftN = (volatilityOverTime * (E()^(drift * timeStamp)) - 1.0);
+        let dT = IntAsDouble(totalTime) / IntAsDouble(steps);
+        let volatilityOverTime = E() ^ (volatility * Sqrt(dT));
+        mutable priceShiftN = (volatilityOverTime * (E()^(drift * dT)) - 1.0);
         mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
         if priceShiftD == 0.0 { // NOTE: account for floating point error?
             if priceShiftN == 0.0 {
                 // Verified
-                set priceShiftN = E()^(drift * timeStamp);
+                set priceShiftN = E()^(drift * dT);
                 set priceShiftD = 2.0 * volatilityOverTime;
             } else {
                 fail "Price shift is undefined";
@@ -164,8 +161,8 @@ namespace QMC {
         AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation, measureMax);
 
         // QFT†
-        SwapReverseRegister(output);
-        Adjoint QFT(BigEndian(output));
+        // SwapReverseRegister(output);
+        // Adjoint QFT(BigEndian(output));
 
         let res = MultiM(output);
 

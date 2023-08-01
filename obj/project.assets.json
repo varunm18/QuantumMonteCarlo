@@ -7175,11 +7175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ubuntu/prajwal/QuantumMonteCarlo/L12.csproj",
+      "projectUniqueName": "/home/ubuntu/ryan/LABS/L12/L12.csproj",
       "projectName": "L12",
-      "projectPath": "/home/ubuntu/prajwal/QuantumMonteCarlo/L12.csproj",
+      "projectPath": "/home/ubuntu/ryan/LABS/L12/L12.csproj",
       "packagesPath": "/home/ubuntu/.nuget/packages/",
-      "outputPath": "/home/ubuntu/prajwal/QuantumMonteCarlo/obj/",
+      "outputPath": "/home/ubuntu/ryan/LABS/L12/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ubuntu/.nuget/NuGet/NuGet.Config"

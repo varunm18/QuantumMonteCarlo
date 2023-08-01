@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "envtzZvTfG6webWtlzI2x8lZ8IPaD9yiFmJge/fQ01a+0kF+wCqWxNm3AtL0lYmPOxKB+xhZwEH5RM1JAGdC5A==",
+  "dgSpecHash": "YS7dJ7kbAp5w1L/kHQ5XWH3/3K4m0utvkBR2uefLCQWU9j7l7WfzcL1gyNUdfGifG2yyNsJNgV+N4h2+dBHyKw==",
   "success": true,
-  "projectFilePath": "/home/ubuntu/prajwal/QuantumMonteCarlo/L12.csproj",
+  "projectFilePath": "/home/ubuntu/ryan/LABS/L12/L12.csproj",
   "expectedPackageFiles": [
     "/home/ubuntu/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/ubuntu/.nuget/packages/azure.identity/1.5.0/azure.identity.1.5.0.nupkg.sha512",

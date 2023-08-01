@@ -29,16 +29,42 @@ for i in range(1, len(prices)):
 volatility = np.std(log_returns)*math.sqrt(num_trading_days)
 
 daily_drift = np.mean(log_returns)
-annual_drift = daily_drift * num_trading_days
+target_drift = daily_drift * num_trading_days
 
 print(f"Volatility: {volatility}")
 print(f"Daily drift: {daily_drift}")
-print(f"Annual drift: {annual_drift}")
+print(f"Target drift: {target_drift}")
+
+# Variables
+totalTime = 1 # In years
+steps = 2
+
+# Predicted price results
+maxPrice = prices[-1] * math.pow(math.e, (target_drift * totalTime))
 
 if QUANTUM:
-    values = {}
-    for _ in range(100):
-        val = tuple(MainOp.simulate(volatility=volatility, drift=annual_drift))
-        values[val] = values.get(val, 0) + 1
+    thetaMap = {
+        (0, 0, 0): 0,
+        (0, 0, 1): math.pi / 4,
+        (0, 1, 0): 3/4 * math.pi,
+        (0, 1, 1): math.pi,
+        (1, 0, 0): 2*math.pi - 3/4*math.pi,
+        (1, 0, 1): 2*math.pi - math.pi/2,
+        (1, 1, 0): 2*math.pi - math.pi/4,
+        (1, 1, 1): 2 * math.pi,
+    }
 
-    print(values)
+    simulations = 1000
+
+    probs = {}
+    for _ in range(simulations):
+        val = tuple(MainOp.simulate(volatility=volatility, drift=target_drift, totalTime=totalTime, steps=steps))
+        angle = thetaMap[val]
+        prob = math.pow(math.sin(angle/2), 2)
+
+        probs[prob] = probs.get(prob, 0) + 1
+    
+    for key, value in probs.items():
+        print(f"We have {value / simulations * 100}% confidence regarding a {key * 100}% chance measuring the perceived outcome~")
+
+    
