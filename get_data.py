@@ -1,14 +1,21 @@
-import json
-import requests
-from os import getenv
 import click
+import json
 import re
+import requests
+
+from os import getenv
+
 
 @click.command()
-@click.option('--ticker', help='The name of stock to retrieve data for.')
-@click.option('--date', help='Date range in the format YYYY-MM-DD/YYYY-MM-DD')
+@click.argument('ticker', required=True)
+@click.argument('date', required=True, default='2022-01-01/2023-01-01')
 def retrieve(ticker, date):
-
+    """
+    Retrieve stock data from Polygon.io
+    
+    TICKER: Stock ticker
+    DATE: Date range in the format 'YYYY-MM-DD/YYYY-MM-DD' (start/end)
+    """
     if ticker is None or date is None:
         raise ValueError('Invalid command-line argument')
     
@@ -31,6 +38,7 @@ def retrieve(ticker, date):
 
     with open('data.json', 'w') as f:
         json.dump(data, f, indent=4)
+
 
 if __name__ == '__main__':
     retrieve()

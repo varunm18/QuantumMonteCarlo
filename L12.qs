@@ -48,8 +48,7 @@ namespace QMC {
             ApplyToEachC(X, input);
             Controlled X(input, riskMeasure[0]);
             ApplyToEachC(X, input);
-        }
-        else {
+        } else {
             Controlled X(input, riskMeasure[0]);
         }
     }
@@ -94,7 +93,7 @@ namespace QMC {
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
-            // Apply Q gate for 2 ^ qubit-index times
+            // Apply Q gate 2 ^ qubit-index times
             for _ in 0 .. qCount - 1 {
                 Controlled QInterference([output[i]], (riskFactors, riskMeasure, rotation, measureMax));
             }
@@ -151,7 +150,6 @@ namespace QMC {
 
         // QFT
         QFT(BigEndian(output));
-        SwapReverseRegister(output);
 
         // Store intermediate values w/ Risk Measurement qubits
         RiskMeasure(riskFactors, riskMeasures, measureMax);
@@ -160,8 +158,8 @@ namespace QMC {
         AmplifyOutput(riskFactors, riskMeasures, output, degreesRotation, measureMax);
 
         // QFT†
-        // SwapReverseRegister(output);
-        // Adjoint QFT(BigEndian(output));
+        SwapReverseRegister(output);
+        Adjoint QFT(BigEndian(output));
 
         let res = MultiM(output);
 
