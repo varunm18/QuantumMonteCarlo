@@ -4,6 +4,8 @@ import sys
 
 import numpy as np
 
+import click
+
 QUANTUM = False
 if len(sys.argv) > 1:
     if sys.argv[1] == '-q':

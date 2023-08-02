@@ -1,10 +1,10 @@
 --proj
-    "/home/ubuntu/ryan/LABS/L12/L12"
+    "/home/ubuntu/varun/QuantumMonteCarlo/L12"
 --build-exe
 --input
-    "/home/ubuntu/ryan/LABS/L12/L12.qs"
+    "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
 --output
-    "/home/ubuntu/ryan/LABS/L12/obj/qsharp/"
+    "/home/ubuntu/varun/QuantumMonteCarlo/obj/qsharp/"
 --references
     "/home/ubuntu/.nuget/packages/azure.core/1.25.0/lib/net5.0/Azure.Core.dll"
     "/home/ubuntu/.nuget/packages/azure.identity/1.5.0/lib/netstandard2.0/Azure.Identity.dll"
@@ -25,12 +25,10 @@
     "/home/ubuntu/.nuget/packages/microsoft.identity.client/4.30.1/lib/netcoreapp2.1/Microsoft.Identity.Client.dll"
     "/home/ubuntu/.nuget/packages/microsoft.identity.client.extensions.msal/2.18.4/lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.compiler/0.28.263081/lib/net6.0/Microsoft.Quantum.BondSchemas.dll"
-    "/home/ubuntu/.nuget/packages/microsoft.quantum.decompositions.ionq/0.28.263081/lib/net6.0/Microsoft.Quantum.Decompositions.IonQ.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.entrypointdriver/0.28.263081/lib/net6.0/Microsoft.Quantum.EntryPointDriver.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.qirgeneration/0.28.263081/lib/net6.0/Microsoft.Quantum.LlvmBindings.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.providers.core/0.28.263081/lib/net6.0/Microsoft.Quantum.Providers.Core.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.providers.datastructures/0.28.263081/lib/net6.0/Microsoft.Quantum.Providers.Datastructures.dll"
-    "/home/ubuntu/.nuget/packages/microsoft.quantum.providers.ionq/0.28.263081/lib/net6.0/Microsoft.Quantum.Providers.IonQ.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.qirgeneration/0.28.263081/lib/net6.0/Microsoft.Quantum.QirGeneration.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.compiler/0.28.263081/lib/net6.0/Microsoft.Quantum.QsCompilationManager.dll"
     "/home/ubuntu/.nuget/packages/microsoft.quantum.compiler/0.28.263081/lib/net6.0/Microsoft.Quantum.QsCompiler.dll"
@@ -53,14 +51,16 @@
     "/home/ubuntu/.nuget/packages/numsharp/0.20.5/lib/netstandard2.0/NumSharp.Core.dll"
 --load
     "/home/ubuntu/.nuget/packages/microsoft.quantum.csharpgeneration/0.28.263081/build//../lib/net6.0/Microsoft.Quantum.CSharpGeneration.dll"
+    "/home/ubuntu/.nuget/packages/microsoft.quantum.qirgeneration/0.28.263081/build//../lib/net6.0/Microsoft.Quantum.QirGeneration.dll"
 --runtime
-    BasicQuantumFunctionality
+    FullComputation
 --package-load-fallback-folders
-    "/home/ubuntu/ryan/LABS/L12/bin/Debug/net6.0/"
+    "/home/ubuntu/varun/QuantumMonteCarlo/bin/Debug/net6.0/"
 --assembly-properties
     DocsPackageId:L12
-    ExecutionTarget:ionq.simulator
+    ExecutionTarget:microsoft.estimator
+    QuantumInstructionSet:Default
     AssemblyName:L12
-    ProcessorArchitecture:IonQProcessor
-    TargetCapability:BasicQuantumFunctionality
+    ProcessorArchitecture:MicrosoftQuantum
+    TargetCapability:FullComputation
     QSharpOutputType:QSharpExe

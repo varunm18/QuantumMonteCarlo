@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ubuntu/ryan/LABS/L12/L12.csproj": {}
+    "/home/ubuntu/varun/QuantumMonteCarlo/L12.csproj": {}
   },
   "projects": {
-    "/home/ubuntu/ryan/LABS/L12/L12.csproj": {
+    "/home/ubuntu/varun/QuantumMonteCarlo/L12.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ubuntu/ryan/LABS/L12/L12.csproj",
+        "projectUniqueName": "/home/ubuntu/varun/QuantumMonteCarlo/L12.csproj",
         "projectName": "L12",
-        "projectPath": "/home/ubuntu/ryan/LABS/L12/L12.csproj",
+        "projectPath": "/home/ubuntu/varun/QuantumMonteCarlo/L12.csproj",
         "packagesPath": "/home/ubuntu/.nuget/packages/",
-        "outputPath": "/home/ubuntu/ryan/LABS/L12/obj/",
+        "outputPath": "/home/ubuntu/varun/QuantumMonteCarlo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ubuntu/.nuget/NuGet/NuGet.Config"
@@ -49,9 +49,19 @@
               "version": "[0.28.263081, )",
               "autoReferenced": true
             },
+            "Microsoft.Quantum.Providers.Core": {
+              "target": "Package",
+              "version": "[0.28.263081, )"
+            },
             "Microsoft.Quantum.QSharp.Core": {
               "target": "Package",
               "version": "[0.28.263081, )"
+            },
+            "Microsoft.Quantum.QirGeneration": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[0.28.263081, )",
+              "autoReferenced": true
             },
             "Microsoft.Quantum.Runtime.Core": {
               "target": "Package",

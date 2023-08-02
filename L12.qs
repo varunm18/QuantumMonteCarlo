@@ -124,7 +124,6 @@ namespace QMC {
     // @EntryPoint() denotes the start of program execution.
     @EntryPoint()
     operation MainOp(volatility: Double, drift: Double, totalTime: Int, steps: Int) : Result[] {
-        
         // Initializations
         use riskFactors = Qubit[steps];
         use riskMeasures = Qubit[3];

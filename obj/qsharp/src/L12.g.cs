@@ -14,24 +14,24 @@ using Microsoft.Quantum.Intrinsic;
 using Microsoft.Quantum.Intrinsic.Interfaces;
 using Microsoft.Quantum.Simulation.Core;
 
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"PrepD\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":16}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":17},\"Item2\":{\"Line\":1,\"Column\":28}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":39},\"Item2\":{\"Line\":1,\"Column\":47}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"PrepD\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":16}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"PrepD\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":67},\"Item2\":{\"Line\":1,\"Column\":70}},\"Documentation\":[\"automatically generated QsControlled specialization for MITRE.QSD.L12.PrepD\"]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":22}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"input\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":23},\"Item2\":{\"Line\":1,\"Column\":28}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":39},\"Item2\":{\"Line\":1,\"Column\":50}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":61},\"Item2\":{\"Line\":1,\"Column\":71}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":22}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":89},\"Item2\":{\"Line\":1,\"Column\":92}},\"Documentation\":[\"automatically generated QsControlled specialization for MITRE.QSD.L12.RiskMeasure\"]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"QInterference\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":25},\"Item2\":{\"Line\":1,\"Column\":36}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":47},\"Item2\":{\"Line\":1,\"Column\":58}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":69},\"Item2\":{\"Line\":1,\"Column\":77}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":87},\"Item2\":{\"Line\":1,\"Column\":97}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"QInterference\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"QInterference\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":115},\"Item2\":{\"Line\":1,\"Column\":118}},\"Documentation\":[\"automatically generated QsControlled specialization for MITRE.QSD.L12.QInterference\"]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"AmplifyOutput\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":91,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":25},\"Item2\":{\"Line\":1,\"Column\":36}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":47},\"Item2\":{\"Line\":1,\"Column\":58}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"output\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":69},\"Item2\":{\"Line\":1,\"Column\":75}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":86},\"Item2\":{\"Line\":1,\"Column\":94}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":104},\"Item2\":{\"Line\":1,\"Column\":114}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"AmplifyOutput\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":91,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"Documentation\":[]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"MainOp\"},\"Attributes\":[{\"TypeId\":{\"Case\":\"Value\",\"Fields\":[{\"Namespace\":\"Microsoft.Quantum.Core\",\"Name\":\"EntryPoint\",\"Range\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":2},\"Item2\":{\"Line\":1,\"Column\":12}}]}}]},\"TypeIdRange\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":2},\"Item2\":{\"Line\":1,\"Column\":12}}]},\"Argument\":{\"Item1\":{\"Case\":\"UnitValue\"},\"Item2\":[],\"Item3\":{\"Case\":\"UnitType\"},\"Item4\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Item5\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":12},\"Item2\":{\"Line\":1,\"Column\":14}}]}},\"Offset\":{\"Item1\":124,\"Item2\":4},\"Comments\":{\"OpeningComments\":[\" // Dagger\",\" operation QFTDagger(output: BigEndian) : Unit{\",\"     // SwapReverseRegister(output!);\",\"\",\"     for i in 0 .. Length(output!)-1 {\",\"         if i != 0 {\",\"             for x in i .. 1 {\",\"                 let degreesRotation = -PI() / 2.0^IntAsDouble(x);\",\"                 let controlQubitIndex = i - x;\",\"\",\"                 Controlled Rz([output![controlQubitIndex]], (degreesRotation, output![i]));\",\"             }\",\"         }\",\"\",\"         H(output![i]);\",\"     }\",\"\",\" }\",\"\",\"\",\" @EntryPoint() denotes the start of program execution.\"],\"ClosingComments\":[]}}],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":125,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":17}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"UnitType\"},\"ReturnType\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Result\"}]},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
-[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"MITRE.QSD.L12\",\"Name\":\"MainOp\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/ryan/LABS/L12/L12.qs\",\"Position\":{\"Item1\":125,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":17}},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"QMC\",\"Name\":\"PrepD\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":16}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":17},\"Item2\":{\"Line\":1,\"Column\":28}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":39},\"Item2\":{\"Line\":1,\"Column\":47}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"PrepD\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":16}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"PrepD\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":35,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":67},\"Item2\":{\"Line\":1,\"Column\":70}},\"Documentation\":[\"automatically generated QsControlled specialization for QMC.PrepD\"]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"QMC\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":22}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"input\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":23},\"Item2\":{\"Line\":1,\"Column\":28}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":39},\"Item2\":{\"Line\":1,\"Column\":50}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":61},\"Item2\":{\"Line\":1,\"Column\":71}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":22}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"RiskMeasure\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":43,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":89},\"Item2\":{\"Line\":1,\"Column\":92}},\"Documentation\":[\"automatically generated QsControlled specialization for QMC.RiskMeasure\"]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"QMC\",\"Name\":\"QInterference\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":25},\"Item2\":{\"Line\":1,\"Column\":36}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":47},\"Item2\":{\"Line\":1,\"Column\":58}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":69},\"Item2\":{\"Line\":1,\"Column\":77}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":87},\"Item2\":{\"Line\":1,\"Column\":97}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"QInterference\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsControlled\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"SimpleSet\",\"Fields\":[{\"Case\":\"Controllable\"}]},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"QInterference\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":57,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":115},\"Item2\":{\"Line\":1,\"Column\":118}},\"Documentation\":[\"automatically generated QsControlled specialization for QMC.QInterference\"]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"QMC\",\"Name\":\"AmplifyOutput\"},\"Attributes\":[],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":91,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskFactors\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":25},\"Item2\":{\"Line\":1,\"Column\":36}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"riskMeasure\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":47},\"Item2\":{\"Line\":1,\"Column\":58}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"output\"]},\"Type\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":69},\"Item2\":{\"Line\":1,\"Column\":75}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"rotation\"]},\"Type\":{\"Case\":\"Double\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":86},\"Item2\":{\"Line\":1,\"Column\":94}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"measureMax\"]},\"Type\":{\"Case\":\"Bool\"},\"InferredInformation\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":104},\"Item2\":{\"Line\":1,\"Column\":114}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Qubit\"}]},{\"Case\":\"Double\"},{\"Case\":\"Bool\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"AmplifyOutput\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":91,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":24}},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"QMC\",\"Name\":\"MainOp\"},\"Attributes\":[{\"TypeId\":{\"Case\":\"Value\",\"Fields\":[{\"Namespace\":\"Microsoft.Quantum.Core\",\"Name\":\"EntryPoint\",\"Range\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":2},\"Item2\":{\"Line\":1,\"Column\":12}}]}}]},\"TypeIdRange\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":2},\"Item2\":{\"Line\":1,\"Column\":12}}]},\"Argument\":{\"Item1\":{\"Case\":\"UnitValue\"},\"Item2\":[],\"Item3\":{\"Case\":\"UnitType\"},\"Item4\":{\"IsMutable\":false,\"HasLocalQuantumDependency\":false},\"Item5\":{\"Case\":\"Value\",\"Fields\":[{\"Item1\":{\"Line\":1,\"Column\":12},\"Item2\":{\"Line\":1,\"Column\":14}}]}},\"Offset\":{\"Item1\":124,\"Item2\":4},\"Comments\":{\"OpeningComments\":[\" // Dagger\",\" operation QFTDagger(output: BigEndian) : Unit{\",\"     // SwapReverseRegister(output!);\",\"\",\"     for i in 0 .. Length(output!)-1 {\",\"         if i != 0 {\",\"             for x in i .. 1 {\",\"                 let degreesRotation = -PI() / 2.0^IntAsDouble(x);\",\"                 let controlQubitIndex = i - x;\",\"\",\"                 Controlled Rz([output![controlQubitIndex]], (degreesRotation, output![i]));\",\"             }\",\"         }\",\"\",\"         H(output![i]);\",\"     }\",\"\",\" }\",\"\",\"\",\" @EntryPoint() denotes the start of program execution.\"],\"ClosingComments\":[]}}],\"Modifiers\":{\"Access\":{\"Case\":\"DefaultAccess\"}},\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":125,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":17}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"UnitType\"},\"ReturnType\":{\"Case\":\"ArrayType\",\"Fields\":[{\"Case\":\"Result\"}]},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}}},\"Documentation\":[]}")]
+[assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"TypeArguments\":{\"Case\":\"Null\"},\"Information\":{\"Characteristics\":{\"Case\":\"EmptySet\"},\"InferredInformation\":{\"IsSelfAdjoint\":false,\"IsIntrinsic\":false}},\"Parent\":{\"Namespace\":\"QMC\",\"Name\":\"MainOp\"},\"Attributes\":[],\"SourceFile\":\"/home/ubuntu/varun/QuantumMonteCarlo/L12.qs\",\"Position\":{\"Item1\":125,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":17}},\"Documentation\":[]}")]
 #line hidden
-namespace MITRE.QSD.L12
+namespace QMC
 {
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Body, 36, 44)]
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Controlled, 36, 44)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Body, 36, 44)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Controlled, 36, 44)]
     public partial class PrepD : Controllable<(IQArray<Qubit>,Double)>, ICallable
     {
         public PrepD(IOperationFactory m) : base(m)
@@ -54,7 +54,7 @@ namespace MITRE.QSD.L12
         }
 
         String ICallable.Name => "PrepD";
-        String ICallable.FullName => "MITRE.QSD.L12.PrepD";
+        String ICallable.FullName => "QMC.PrepD";
         protected ICallable Length__
         {
             get;
@@ -70,11 +70,11 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,Double), QVoid> __Body__ => (__in__) =>
         {
             var (riskFactors,rotation) = __in__;
-#line 37 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 37 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             foreach (var i in new QRange(0L, (riskFactors.Length - 1L)))
 #line hidden
             {
-#line 38 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 38 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__Ry.Apply((rotation, riskFactors[i]));
             }
 
@@ -86,11 +86,11 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,(IQArray<Qubit>,Double)), QVoid> __ControlledBody__ => (__in__) =>
         {
             var (__controlQubits__,(riskFactors,rotation)) = __in__;
-#line 36 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 36 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             foreach (var i in new QRange(0L, (riskFactors.Length - 1L)))
 #line hidden
             {
-#line 36 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 36 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__Ry.Controlled.Apply((__controlQubits__, (rotation, riskFactors[i])));
             }
 
@@ -113,8 +113,8 @@ namespace MITRE.QSD.L12
         }
     }
 
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Body, 44, 58)]
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Controlled, 44, 58)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Body, 44, 58)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Controlled, 44, 58)]
     public partial class RiskMeasure : Controllable<(IQArray<Qubit>,IQArray<Qubit>,Boolean)>, ICallable
     {
         public RiskMeasure(IOperationFactory m) : base(m)
@@ -137,8 +137,8 @@ namespace MITRE.QSD.L12
         }
 
         String ICallable.Name => "RiskMeasure";
-        String ICallable.FullName => "MITRE.QSD.L12.RiskMeasure";
-        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC
+        String ICallable.FullName => "QMC.RiskMeasure";
+        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC
         {
             get;
             set;
@@ -153,19 +153,19 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,IQArray<Qubit>,Boolean), QVoid> __Body__ => (__in__) =>
         {
             var (input,riskMeasure,measureMax) = __in__;
-#line 47 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 47 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             if (!(measureMax))
             {
-#line 48 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
-#line 49 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 48 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
+#line 49 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Apply((input, riskMeasure[0L]));
-#line 50 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
+#line 50 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, input));
             }
             else
             {
-#line 53 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 53 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Apply((input, riskMeasure[0L]));
             }
 
@@ -177,19 +177,19 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,(IQArray<Qubit>,IQArray<Qubit>,Boolean)), QVoid> __ControlledBody__ => (__in__) =>
         {
             var (__controlQubits__,(input,riskMeasure,measureMax)) = __in__;
-#line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 44 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             if (!(measureMax))
             {
-#line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
-#line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 44 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
+#line 44 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (input, riskMeasure[0L])));
-#line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
+#line 44 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, input)));
             }
             else
             {
-#line 44 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 44 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (input, riskMeasure[0L])));
             }
 
@@ -200,7 +200,7 @@ namespace MITRE.QSD.L12
         ;
         public override void __Init__()
         {
-            this.Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC));
+            this.Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC));
             this.Microsoft__Quantum__Intrinsic__X = this.__Factory__.Get<IUnitary<Qubit>>(typeof(global::Microsoft.Quantum.Intrinsic.X));
         }
 
@@ -212,8 +212,8 @@ namespace MITRE.QSD.L12
         }
     }
 
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Body, 58, 92)]
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Controlled, 58, 92)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Body, 58, 92)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Controlled, 58, 92)]
     public partial class QInterference : Controllable<(IQArray<Qubit>,IQArray<Qubit>,Double,Boolean)>, ICallable
     {
         public QInterference(IOperationFactory m) : base(m)
@@ -236,7 +236,7 @@ namespace MITRE.QSD.L12
         }
 
         String ICallable.Name => "QInterference";
-        String ICallable.FullName => "MITRE.QSD.L12.QInterference";
+        String ICallable.FullName => "QMC.QInterference";
         protected IUnitary<Qubit> Microsoft__Quantum__Intrinsic__X
         {
             get;
@@ -261,7 +261,7 @@ namespace MITRE.QSD.L12
             set;
         }
 
-        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC
+        private protected IControllable<(IControllable,IQArray<Qubit>)> Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC
         {
             get;
             set;
@@ -270,37 +270,37 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,IQArray<Qubit>,Double,Boolean), QVoid> __Body__ => (__in__) =>
         {
             var (riskFactors,riskMeasure,rotation,measureMax) = __in__;
-#line 61 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 61 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
-#line 62 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 62 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__Z.Apply(riskMeasure[0L]);
-#line 63 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 63 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
-#line 66 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 66 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             RiskMeasure__.Apply((riskFactors, riskMeasure, measureMax));
-#line 69 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 69 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             PrepD__.Apply((riskFactors, -(rotation)));
-#line 72 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
-#line 73 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 72 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
+#line 73 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
-#line 75 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 75 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((riskFactors, riskMeasure[1L]));
-#line 76 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 76 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((riskMeasure.Slice(new QRange(0L, 1L)), riskMeasure[2L]));
-#line 77 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 77 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__Z.Controlled.Apply((new QArray<Qubit>(riskMeasure[2L]), riskMeasure[0L]));
-#line 78 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 78 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((riskMeasure.Slice(new QRange(0L, 1L)), riskMeasure[2L]));
-#line 79 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 79 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((riskFactors, riskMeasure[1L]));
-#line 81 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 81 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Apply(riskMeasure[0L]);
-#line 82 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
-#line 84 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 82 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Apply((Microsoft__Quantum__Intrinsic__X, riskFactors));
+#line 84 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             PrepD__.Apply((riskFactors, rotation));
-#line 87 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 87 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             RiskMeasure__.Apply((riskFactors, riskMeasure, measureMax));
 #line hidden
             return QVoid.Instance;
@@ -310,37 +310,37 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,(IQArray<Qubit>,IQArray<Qubit>,Double,Boolean)), QVoid> __ControlledBody__ => (__in__) =>
         {
             var (__controlQubits__,(riskFactors,riskMeasure,rotation,measureMax)) = __in__;
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__Z.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             RiskMeasure__.Controlled.Apply((__controlQubits__, (riskFactors, riskMeasure, measureMax)));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             PrepD__.Controlled.Apply((__controlQubits__, (riskFactors, -(rotation))));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (riskFactors, riskMeasure[1L])));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (riskMeasure.Slice(new QRange(0L, 1L)), riskMeasure[2L])));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__Z.Controlled.Controlled.Apply((__controlQubits__, (new QArray<Qubit>(riskMeasure[2L]), riskMeasure[0L])));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (riskMeasure.Slice(new QRange(0L, 1L)), riskMeasure[2L])));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Controlled.Apply((__controlQubits__, (riskFactors, riskMeasure[1L])));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             Microsoft__Quantum__Intrinsic__X.Controlled.Apply((__controlQubits__, riskMeasure[0L]));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-            Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC.Controlled.Apply((__controlQubits__, (Microsoft__Quantum__Intrinsic__X, riskFactors)));
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             PrepD__.Controlled.Apply((__controlQubits__, (riskFactors, rotation)));
-#line 58 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 58 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             RiskMeasure__.Controlled.Apply((__controlQubits__, (riskFactors, riskMeasure, measureMax)));
 #line hidden
             return QVoid.Instance;
@@ -353,7 +353,7 @@ namespace MITRE.QSD.L12
             this.Microsoft__Quantum__Intrinsic__Z = this.__Factory__.Get<IUnitary<Qubit>>(typeof(global::Microsoft.Quantum.Intrinsic.Z));
             this.RiskMeasure__ = this.__Factory__.Get<IControllable<(IQArray<Qubit>,IQArray<Qubit>,Boolean)>>(typeof(RiskMeasure));
             this.PrepD__ = this.__Factory__.Get<IControllable<(IQArray<Qubit>,Double)>>(typeof(PrepD));
-            this.Microsoft__Quantum__Canon___dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._dc32ba0f78a844fdbebb75cc246df27d_ApplyToEachC));
+            this.Microsoft__Quantum__Canon___33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC = this.__Factory__.Get<IControllable<(IControllable,IQArray<Qubit>)>>(typeof(global::Microsoft.Quantum.Canon._33ae9d1e4d474ab68bde1d1049f0519c_ApplyToEachC));
         }
 
         public override IApplyData __DataIn__((IQArray<Qubit>,IQArray<Qubit>,Double,Boolean) data) => new In(data);
@@ -364,7 +364,7 @@ namespace MITRE.QSD.L12
         }
     }
 
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Body, 92, 126)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Body, 92, 126)]
     public partial class AmplifyOutput : Operation<(IQArray<Qubit>,IQArray<Qubit>,IQArray<Qubit>,Double,Boolean), QVoid>, ICallable
     {
         public AmplifyOutput(IOperationFactory m) : base(m)
@@ -387,7 +387,7 @@ namespace MITRE.QSD.L12
         }
 
         String ICallable.Name => "AmplifyOutput";
-        String ICallable.FullName => "MITRE.QSD.L12.AmplifyOutput";
+        String ICallable.FullName => "QMC.AmplifyOutput";
         protected ICallable Length__
         {
             get;
@@ -403,17 +403,17 @@ namespace MITRE.QSD.L12
         public override Func<(IQArray<Qubit>,IQArray<Qubit>,IQArray<Qubit>,Double,Boolean), QVoid> __Body__ => (__in__) =>
         {
             var (riskFactors,riskMeasure,output,rotation,measureMax) = __in__;
-#line 94 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 94 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
             foreach (var i in new QRange(0L, (output.Length - 1L)))
 #line hidden
             {
-#line 95 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 95 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 var qCount = 2L.Pow(i);
-#line 98 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 98 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                 foreach (var __arg1__ in new QRange(0L, (qCount - 1L)))
 #line hidden
                 {
-#line 99 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 99 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                     QInterference__.Controlled.Apply((new QArray<Qubit>(output[i]), (riskFactors, riskMeasure, rotation, measureMax)));
                 }
             }
@@ -437,7 +437,7 @@ namespace MITRE.QSD.L12
         }
     }
 
-    [SourceLocation("/home/ubuntu/ryan/LABS/L12/L12.qs", OperationFunctor.Body, 126, -1)]
+    [SourceLocation("/home/ubuntu/varun/QuantumMonteCarlo/L12.qs", OperationFunctor.Body, 126, -1)]
     public partial class MainOp : Operation<QVoid, IQArray<Result>>, ICallable
     {
         public MainOp(IOperationFactory m) : base(m)
@@ -445,8 +445,8 @@ namespace MITRE.QSD.L12
         }
 
         String ICallable.Name => "MainOp";
-        String ICallable.FullName => "MITRE.QSD.L12.MainOp";
-        public static IonQEntryPointInfo<QVoid, IQArray<Result>> Info => new IonQEntryPointInfo<QVoid, IQArray<Result>>(typeof(MainOp));
+        String ICallable.FullName => "QMC.MainOp";
+        public static EntryPointInfo<QVoid, IQArray<Result>> Info => new EntryPointInfo<QVoid, IQArray<Result>>(typeof(MainOp));
         protected Allocate Allocate__
         {
             get;
@@ -454,6 +454,12 @@ namespace MITRE.QSD.L12
         }
 
         protected Release Release__
+        {
+            get;
+            set;
+        }
+
+        protected ICallable<Int64, Double> Microsoft__Quantum__Convert__IntAsDouble
         {
             get;
             set;
@@ -519,19 +525,33 @@ namespace MITRE.QSD.L12
             set;
         }
 
+        protected ICallable<IQArray<Qubit>, QVoid> ResetAll__
+        {
+            get;
+            set;
+        }
+
         public override Func<QVoid, IQArray<Result>> __Body__ => (__in__) =>
         {
+#line 127 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            var volatility = 0.033356677718267856D;
+#line 128 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            var drift = 0.021599585343382563D;
+#line 129 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            var totalTime = 1L;
+#line 130 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+            var steps = 2L;
 #line hidden
             {
-#line 128 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                var riskFactors = Allocate__.Apply(2L);
+#line 132 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                var riskFactors = Allocate__.Apply(steps);
 #line hidden
                 bool __arg1__ = true;
                 try
                 {
 #line hidden
                     {
-#line 129 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 133 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                         var riskMeasures = Allocate__.Apply(3L);
 #line hidden
                         bool __arg2__ = true;
@@ -539,68 +559,60 @@ namespace MITRE.QSD.L12
                         {
 #line hidden
                             {
-#line 130 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 134 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                 var output = Allocate__.Apply(3L);
 #line hidden
                                 bool __arg3__ = true;
                                 try
                                 {
-#line 131 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 135 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     var measureMax = true;
-#line 134 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var volatility = 0D;
-#line 135 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var drift = 0D;
-#line 136 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var totalTime = 1D;
-#line 137 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var steps = 2D;
-#line 138 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var timeStamp = (totalTime / steps);
-#line 140 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var volatilityOverTime = Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((volatility * Microsoft__Quantum__Math__Sqrt.Apply(timeStamp)));
-#line 141 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    var priceShiftN = ((volatilityOverTime * Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((drift * timeStamp))) - 1D);
-#line 142 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 137 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    var dT = (Microsoft__Quantum__Convert__IntAsDouble.Apply(totalTime) / Microsoft__Quantum__Convert__IntAsDouble.Apply(steps));
+#line 138 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    var volatilityOverTime = Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((volatility * Microsoft__Quantum__Math__Sqrt.Apply(dT)));
+#line 139 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    var priceShiftN = ((volatilityOverTime * Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((drift * dT))) - 1D);
+#line 140 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     var priceShiftD = (volatilityOverTime.Pow(2D) - 1D);
-#line 143 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 141 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     if ((priceShiftD == 0D))
                                     {
-#line 144 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 142 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                         if ((priceShiftN == 0D))
                                         {
-#line 146 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                            priceShiftN = Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((drift * timeStamp));
-#line 147 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 144 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                            priceShiftN = Microsoft__Quantum__Math__E.Apply(QVoid.Instance).Pow((drift * dT));
+#line 145 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                             priceShiftD = (2D * volatilityOverTime);
                                         }
                                         else
                                         {
-#line 149 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 147 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                             throw new ExecutionFailException("Price shift is undefined");
                                         }
                                     }
 
-#line 152 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 150 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     var priceShift = (priceShiftN / priceShiftD);
-#line 153 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 151 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     var degreesRotation = (Microsoft__Quantum__Math__ArcSin.Apply(Microsoft__Quantum__Math__Sqrt.Apply(priceShift)) * 2D);
-#line 156 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 154 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     PrepD__.Apply((riskFactors, degreesRotation));
-#line 159 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 157 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     Microsoft__Quantum__Canon__QFT.Apply(new Microsoft.Quantum.Arithmetic.BigEndian(output));
-#line 160 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 158 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     Microsoft__Quantum__Canon__SwapReverseRegister.Apply(output);
-#line 163 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 161 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     RiskMeasure__.Apply((riskFactors, riskMeasures, measureMax));
-#line 166 "/home/ubuntu/ryan/LABS/L12/L12.qs"
+#line 164 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
                                     AmplifyOutput__.Apply((riskFactors, riskMeasures, output, degreesRotation, measureMax));
-#line 169 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    Microsoft__Quantum__Canon__SwapReverseRegister.Apply(output);
-#line 170 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    Microsoft__Quantum__Canon__QFT.Adjoint.Apply(new Microsoft.Quantum.Arithmetic.BigEndian(output));
-#line 172 "/home/ubuntu/ryan/LABS/L12/L12.qs"
-                                    return Microsoft__Quantum__Measurement__MultiM.Apply(output);
+#line 170 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    var res = (IQArray<Result>)Microsoft__Quantum__Measurement__MultiM.Apply(output);
+#line 172 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    ResetAll__.Apply(QArray<Qubit>.Add(QArray<Qubit>.Add(riskFactors, riskMeasures), output));
+#line 174 "/home/ubuntu/varun/QuantumMonteCarlo/L12.qs"
+                                    return res;
                                 }
 #line hidden
                                 catch
@@ -659,6 +671,7 @@ namespace MITRE.QSD.L12
         {
             this.Allocate__ = this.__Factory__.Get<Allocate>(typeof(global::Microsoft.Quantum.Intrinsic.Allocate));
             this.Release__ = this.__Factory__.Get<Release>(typeof(global::Microsoft.Quantum.Intrinsic.Release));
+            this.Microsoft__Quantum__Convert__IntAsDouble = this.__Factory__.Get<ICallable<Int64, Double>>(typeof(global::Microsoft.Quantum.Convert.IntAsDouble));
             this.Microsoft__Quantum__Math__E = this.__Factory__.Get<ICallable<QVoid, Double>>(typeof(global::Microsoft.Quantum.Math.E));
             this.Microsoft__Quantum__Math__Sqrt = this.__Factory__.Get<ICallable<Double, Double>>(typeof(global::Microsoft.Quantum.Math.Sqrt));
             this.Microsoft__Quantum__Math__ArcSin = this.__Factory__.Get<ICallable<Double, Double>>(typeof(global::Microsoft.Quantum.Math.ArcSin));
@@ -669,6 +682,7 @@ namespace MITRE.QSD.L12
             this.RiskMeasure__ = this.__Factory__.Get<IControllable<(IQArray<Qubit>,IQArray<Qubit>,Boolean)>>(typeof(RiskMeasure));
             this.AmplifyOutput__ = this.__Factory__.Get<ICallable<(IQArray<Qubit>,IQArray<Qubit>,IQArray<Qubit>,Double,Boolean), QVoid>>(typeof(AmplifyOutput));
             this.Microsoft__Quantum__Measurement__MultiM = this.__Factory__.Get<ICallable<IQArray<Qubit>, IQArray<Result>>>(typeof(global::Microsoft.Quantum.Measurement.MultiM));
+            this.ResetAll__ = this.__Factory__.Get<ICallable<IQArray<Qubit>, QVoid>>(typeof(global::Microsoft.Quantum.Intrinsic.ResetAll));
         }
 
         public override IApplyData __DataIn__(QVoid data) => data;
