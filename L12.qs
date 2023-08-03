@@ -39,63 +39,76 @@ namespace QMC {
         }
     }
 
+    // AND gate
+    operation And(riskFactors: Qubit[], riskMeasures: Qubit[], depth: Int) : Unit is Adj + Ctl {
+        Controlled X(riskFactors[0..1], riskMeasures[1]);
+        for i in 2 .. Min([depth, Length(riskFactors) - 1]) {
+            Controlled X([riskFactors[i], riskMeasures[i-1]], riskMeasures[i]);
+        }
+        if (depth == Length(riskFactors)) {
+            Controlled X([riskMeasures[0], riskMeasures[Length(riskMeasures)-2]], riskMeasures[Length(riskMeasures)-1]);
+        }
+    }
+
+    operation MeasureMax(riskFactors: Qubit[], riskMeasures: Qubit[]) : Unit is Adj + Ctl {
+        Controlled X(riskFactors, riskMeasures[0]);
+        if Length(riskMeasures) > 3 {
+            Controlled X([riskFactors[Length(riskFactors)-1], riskMeasures[Length(riskMeasures)-3]], riskMeasures[0]);
+        }
+    }
 
     // Update the Risk Measurement qubit
-    operation RiskMeasure(input: Qubit[], riskMeasure: Qubit[], measureMax: Bool) : Unit is Ctl {
-        // Double CNOT gate
-
+    operation RiskMeasure(riskFactors: Qubit[], riskMeasures: Qubit[], measureMax: Bool) : Unit is Adj + Ctl {
         if not measureMax {
-            ApplyToEachC(X, input);
-            Controlled X(input, riskMeasure[0]);
-            ApplyToEachC(X, input);
+            ApplyToEachCA(X, riskFactors);
+            MeasureMax(riskFactors, riskMeasures);
+            ApplyToEachCA(X, riskFactors);
         } else {
-            Controlled X(input, riskMeasure[0]);
+            MeasureMax(riskFactors, riskMeasures);
         }
     }
 
     // Exact same as the example Q gate demonstrated in the paper
-    operation QInterference(riskFactors: Qubit[], riskMeasure: Qubit[], rotation: Double, measureMax: Bool) : Unit is Ctl {
+    operation QInterference(riskFactors: Qubit[], riskMeasures: Qubit[], rotation: Double, measureMax: Bool) : Unit is Ctl {
 
         // XZX, flip phase's sign only if RM = |0> - preparing for cancellation
-        X(riskMeasure[0]);
-        Z(riskMeasure[0]);
-        X(riskMeasure[0]);
+        X(riskMeasures[0]);
+        Z(riskMeasures[0]);
+        X(riskMeasures[0]);
 
         // M†, forms a sandwich w/ the last M
-        RiskMeasure(riskFactors, riskMeasure, measureMax);
+        Adjoint RiskMeasure(riskFactors, riskMeasures, measureMax);
 
         // D†, the negative degrees of rotations
         PrepD(riskFactors, -rotation);
 
-        // Palindrome
+        // region palindrome
         ApplyToEachC(X, riskFactors);
-        X(riskMeasure[0]);
+        X(riskMeasures[0]);
         
-        Controlled X(riskFactors, riskMeasure[1]);
-        Controlled X(riskMeasure[0..1], riskMeasure[2]);
-        Controlled Z([riskMeasure[2]], riskMeasure[0]); // Center of the Palindrome
-        Controlled X(riskMeasure[0..1], riskMeasure[2]);
-        Controlled X(riskFactors, riskMeasure[1]);
+        And(riskFactors, riskMeasures, Length(riskFactors));
+        Controlled Z([riskMeasures[Length(riskMeasures)-1]], riskMeasures[0]); // Center of the Palindrome
+        Adjoint And(riskFactors, riskMeasures, Length(riskFactors));
 
-        X(riskMeasure[0]);
+        X(riskMeasures[0]);
         ApplyToEachC(X, riskFactors);
+        // endregion
 
         PrepD(riskFactors, rotation);
 
         // M sandwich ends
-        RiskMeasure(riskFactors, riskMeasure, measureMax);
-
+        RiskMeasure(riskFactors, riskMeasures, measureMax);
     }
 
     // Output Amplifications - the bunch of Q gates
-    operation AmplifyOutput(riskFactors: Qubit[], riskMeasure: Qubit[], output: Qubit[], rotation: Double, measureMax: Bool) : Unit {
+    operation AmplifyOutput(riskFactors: Qubit[], riskMeasures: Qubit[], output: Qubit[], rotation: Double, measureMax: Bool) : Unit {
         // Use every output qubit as the control bit
         for i in 0 .. Length(output) - 1 {
             let qCount = 2 ^ i;
             
             // Apply Q gate 2 ^ qubit-index times
             for _ in 0 .. qCount - 1 {
-                Controlled QInterference([output[i]], (riskFactors, riskMeasure, rotation, measureMax));
+                Controlled QInterference([output[i]], (riskFactors, riskMeasures, rotation, measureMax));
             }
         }
     }
@@ -125,7 +138,7 @@ namespace QMC {
     operation MainOp(volatility: Double, drift: Double, totalTime: Int, steps: Int) : Result[] {
         // Initializations
         use riskFactors = Qubit[steps];
-        use riskMeasures = Qubit[3];
+        use riskMeasures = Qubit[steps+1];
         use output = Qubit[3];
         let measureMax = true;
 
@@ -150,6 +163,7 @@ namespace QMC {
 
         // QFT
         QFT(BigEndian(output));
+        SwapReverseRegister(output);
 
         // Store intermediate values w/ Risk Measurement qubits
         RiskMeasure(riskFactors, riskMeasures, measureMax);
@@ -167,6 +181,4 @@ namespace QMC {
 
         return res;
     }
-
-
 }

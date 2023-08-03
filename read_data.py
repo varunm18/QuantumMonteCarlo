@@ -50,7 +50,10 @@ print(f"Target drift: {target_drift}")
 
 
 # Predicted price results
-maxPrice = prices[-1] * math.pow(math.e, (target_drift * TOTAL_TIME))
+u = math.exp(volatility*math.sqrt(TOTAL_TIME/NUM_STEPS))
+d = 1/u
+max_price = prices[-1] * math.pow(u, NUM_STEPS)
+min_price = prices[-1] * math.pow(d, NUM_STEPS)
 
 if QUANTUM:
     thetaMap = {  # TODO: change to not be hardcoded
@@ -71,12 +74,11 @@ if QUANTUM:
         prob = math.pow(math.sin(angle/2), 2)
 
         for k in probs:
-            if abs(k - prob) < 1e-3:
+            if abs(k - prob) < 1e-3:  # account for floating point error
                 prob = k
                 break
         probs[prob] = probs.get(prob, 0) + 1
-    
-    for prob, occurrences in probs.items():
-        print(f"We have {occurrences / SIMULATIONS * 100}% confidence regarding a {prob * 100}% chance measuring the perceived outcome~")
 
-    
+    for prob, occurrences in probs.items():
+        print(f"We have {occurrences / SIMULATIONS * 100}% confidence regarding a {prob * 100}% chance of measuring the perceived outcome")
+
