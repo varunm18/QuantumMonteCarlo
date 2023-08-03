@@ -9,8 +9,9 @@ TRADING_YEAR = 252  # trading days/year
 
 SIMULATIONS = 1000
 
-NUM_STEPS = 2
-NUM_OUTPUT_QUBITS = 5
+PREDICT_TIME = 1/4  # years
+NUM_STEPS = 3
+NUM_OUTPUT_QUBITS = 3
 MEASURING_MAX = True
 # endregion
 
@@ -37,13 +38,27 @@ trading_years = num_trading_days / TRADING_YEAR
 
 
 # calculate volatility and drift
-log_returns = np.log(np.divide(prices[1:], prices[:-1]))
+avg = np.mean(prices)
+devSum = 0
+for i in range(len(prices)):
+    deviation = prices[i] - avg
+    squared = deviation**2
 
-mean_log_returns = np.mean(log_returns)
-variance = np.sqrt(np.sum((log_returns-mean_log_returns)**2)/(len(prices)-2))
-volatility = variance/(trading_years**0.5)
+    devSum += squared
 
-target_drift = (mean_log_returns + variance**2/2)/trading_years
+std = math.sqrt(devSum / (len(prices) + 1))
+volatility = std/avg
+
+
+combinedShift = 0
+for i in range(1, len(prices)):
+    priceShift = prices[i] - prices[i-1]
+    ratio = priceShift / prices[i-1]
+
+    combinedShift += ratio
+
+target_drift = combinedShift / (len(prices) - 1) * (TRADING_YEAR * PREDICT_TIME / NUM_STEPS)
+
 
 print(f"Trading days: {num_trading_days}")
 print(f"Volatility: {volatility}")
@@ -51,7 +66,7 @@ print(f"Target drift: {target_drift}")
 
 
 # Predicted price results
-u = math.exp(volatility*math.sqrt(trading_years/NUM_STEPS))
+u = math.exp(volatility*math.sqrt(PREDICT_TIME/NUM_STEPS))
 d = 1/u
 max_price = prices[-1] * math.pow(u, NUM_STEPS)
 min_price = prices[-1] * math.pow(d, NUM_STEPS)
@@ -67,7 +82,7 @@ if QUANTUM:
             MainOp.simulate(
                 volatility=volatility,
                 drift=target_drift,
-                totalTime=trading_years,
+                totalTime=PREDICT_TIME,
                 steps=NUM_STEPS,
                 numOutput=NUM_OUTPUT_QUBITS,
                 measureMax=MEASURING_MAX,
