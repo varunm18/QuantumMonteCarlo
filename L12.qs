@@ -148,7 +148,6 @@ namespace QMC {
         mutable priceShiftD = (volatilityOverTime^2.0 - 1.0);
         if priceShiftD == 0.0 { // NOTE: account for floating point error?
             if priceShiftN == 0.0 {
-                // Verified
                 set priceShiftN = E()^(drift * dT);
                 set priceShiftD = 2.0 * volatilityOverTime;
             } else {

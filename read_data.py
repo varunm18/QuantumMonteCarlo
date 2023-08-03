@@ -7,8 +7,8 @@ import numpy as np
 import click
 
 
-# region variables
-TOTAL_TIME = 1  # in years
+# region constants
+TRADING_YEAR = 252  # trading days/year
 NUM_STEPS = 2
 
 SIMULATIONS = 1000
@@ -33,24 +33,24 @@ prices = list(map(lambda d: d['c'], data['results']))
 assert len(prices) == data['resultsCount']
 
 num_trading_days = len(prices)
+trading_years = num_trading_days / TRADING_YEAR
 
 
-log_returns = []
-for i in range(1, len(prices)):
-    log_returns.append(math.log(prices[i] / prices[i - 1]))
+log_returns = np.log(np.divide(prices[1:], prices[:-1]))
 
 volatility = np.std(log_returns) * math.sqrt(num_trading_days)
 
-daily_drift = np.mean(log_returns)
-target_drift = daily_drift * num_trading_days
+daily_drift = np.mean(np.divide(np.diff(prices), prices[:-1]))
+target_drift = daily_drift * trading_years
 
+print(f"Trading days: {num_trading_days}")
 print(f"Volatility: {volatility}")
 print(f"Daily drift: {daily_drift}")
 print(f"Target drift: {target_drift}")
 
 
 # Predicted price results
-u = math.exp(volatility*math.sqrt(TOTAL_TIME/NUM_STEPS))
+u = math.exp(volatility*math.sqrt(trading_years/NUM_STEPS))
 d = 1/u
 max_price = prices[-1] * math.pow(u, NUM_STEPS)
 min_price = prices[-1] * math.pow(d, NUM_STEPS)
@@ -69,7 +69,7 @@ if QUANTUM:
 
     probs = {}
     for _ in range(SIMULATIONS):
-        val = tuple(MainOp.simulate(volatility=volatility, drift=target_drift, totalTime=TOTAL_TIME, steps=NUM_STEPS))
+        val = tuple(MainOp.simulate(volatility=volatility, drift=target_drift, totalTime=trading_years, steps=NUM_STEPS))
         angle = thetaMap[val]
         prob = math.pow(math.sin(angle/2), 2)
 
