@@ -135,12 +135,11 @@ namespace QMC {
 
     // @EntryPoint() denotes the start of program execution.
     @EntryPoint()
-    operation MainOp(volatility: Double, drift: Double, totalTime: Int, steps: Int) : Result[] {
+    operation MainOp(volatility: Double, drift: Double, totalTime: Int, steps: Int, numOutput: Int, measureMax: Bool) : Result[] {
         // Initializations
         use riskFactors = Qubit[steps];
         use riskMeasures = Qubit[steps+1];
-        use output = Qubit[3];
-        let measureMax = true;
+        use output = Qubit[numOutput];
 
         let dT = IntAsDouble(totalTime) / IntAsDouble(steps);
         let volatilityOverTime = E() ^ (volatility * Sqrt(dT));

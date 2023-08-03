@@ -26,7 +26,6 @@ def retrieve(ticker, date):
     if polygon_key is None:
         raise ValueError('Invalid API key')
 
-    ticker = 'AAPL'
     start_date, end_date = date.split('/')
 
     request = f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/{start_date}/{end_date}?adjusted=true&sort=asc&limit=50000&apiKey={polygon_key}"
